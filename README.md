@@ -1,19 +1,23 @@
 # ngx-socket-io
-[![Build Status](https://travis-ci.org/rodgc/ngx-socket-io.svg?branch=master)](https://travis-ci.org/rodgc/ngx-socket-io)
 [![npm version](https://badge.fury.io/js/ngx-socket-io.svg)](https://badge.fury.io/js/ngx-socket-io)
 [![npm downloads](https://img.shields.io/badge/Downloads-132%2Fmonth-brightgreen.svg)](https://github.com/rodgc/ngx-socket-io)
 
 [Socket.IO](http://socket.io/) module for Angular
 
+# DO NOT USE THIS PACKAGE
+
+This is just a small fork from [rodgc/ng-socket-io](https://github.com/rodgc/ngx-socket-io) to have support
+for socket.io@2 with Angular@13. If that is not your case, please use the original package. 
+
 ## Install
-``` npm install ngx-socket-io ```
+``` npm install psi-socket-io ```
 
 ## How to use
 
 ### Import and configure SocketIoModule
 
 ```ts
-import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { SocketIoModule, SocketIoConfig } from 'psi-socket-io';
 
 const config: SocketIoConfig = { url: 'http://localhost:8988', options: {} };
 
@@ -43,7 +47,7 @@ The ```SocketIoModule``` provides now a configured ```Socket``` service that can
 ```typescript
 
 import { Injectable } from '@angular/core';
-import { Socket } from 'ngx-socket-io';
+import { Socket } from 'psi-socket-io';
 import { map } from 'rxjs/operators';
 
 @Injectable()
@@ -70,7 +74,7 @@ In this case we do not configure the ```SocketIoModule``` directly using ```forR
 ```typescript
 
 import { Injectable, NgModule } from '@angular/core';
-import { Socket } from 'ngx-socket-io';
+import { Socket } from 'psi-socket-io';
 
 @Injectable()
 export class SocketOne extends Socket {
@@ -170,6 +174,7 @@ For `error TS2345` you need to add this to your `tsconfig.json`.
 
 ## Related projects
 
+- [rodgc/ng-socket-io](https://github.com/rodgc/ngx-socket-io) - Socket.IO module for Angular
 - [bougarfaoui/ng-socket-io](https://github.com/bougarfaoui/ng-socket-io) - Socket.IO module for Angular
 
 ## LICENSE
